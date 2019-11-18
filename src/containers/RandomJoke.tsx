@@ -11,10 +11,11 @@ const RandomJoke: React.FC<{}> = () => {
     React.useEffect(() => {
         const getRandomJoke = async () => {
             setLoading(true);
-            const joke = await apiRequest(
+            const rawJoke = await apiRequest(
                 "https://geek-jokes.sameerkumar.website/api",
                 "get"
             );
+            const joke = rawJoke.replace(/&quot;/g, '"');
             setLoading(false);
             setJoke(joke);
         };

@@ -5,8 +5,33 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  form {
+    width: 400px;
+  }
   & button {
-    background: rgba(51, 51, 255, 1) !important;
+    width: 100%;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+  }
+  input {
+    box-sizing:border-box;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s;
   }
 `;
 export const ToDoContainer = styled.div`
@@ -20,18 +45,29 @@ export const ToDoItem = styled.div`
     props.complete ? "line-through" : "none"};
 `;
 export const JokeContainer = styled.div`
-  padding: 30px;
+  padding: 25px;
   text-align: center;
 `;
 export const Header = styled.h4`
+  font-size: x-large;
   text-transform: capitalize;
   letter-spacing: 1px;
   font-weight: bold;
   text-align: center;
+  margin: 25px 0;
 `;
 export const Input = styled.input`
+  box-sizing:border-box;
+  margin-bottom: 20px;
+  display: block;
   width: 100%;
-  border: 1px solid #f2f2f2;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s;
 `;

@@ -18,19 +18,19 @@ function Login() {
   const { error, showError } = useErrorHandler(null);
   
   const authHandler = async () => {
-  try {
-  setLoading(true);
-  const userData = await apiRequest(
-    "https://jsonplaceholder.typicode.com/users",
-    "post",
-    { email: userEmail, password: userPassword }
-  );
-  const { id, email } = userData;
-    auth.setAuthStatus({ id, email });
-  } catch (err) {
-    setLoading(false);
-    showError(err.message);
-  }
+    try {
+      setLoading(true);
+      const userData = await apiRequest(
+        "https://jsonplaceholder.typicode.com/users",
+        "post",
+        { email: userEmail, password: userPassword }
+      );
+      const { id, email } = userData;
+      auth.setAuthStatus({ id, email });
+    } catch (err) {
+      setLoading(false);
+      showError(err.message);
+    }
 };
 return (
     <Form
@@ -42,7 +42,6 @@ return (
       }}
     >
       <Header>Sign in</Header>
-      <br />
       <FormGroup>
         <Input
           type="email"
