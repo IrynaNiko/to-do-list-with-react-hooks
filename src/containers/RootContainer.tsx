@@ -4,7 +4,7 @@ import { authContext } from "../contexts/AuthContext";
 /** Presentation */
 import { Wrapper } from "../components/Styles";
 import Login from "./Login";
-import ToDo from "../components/ToDo";
+import ToDo from "./ToDo";
 
 function RootContainer() {
     const { auth } = React.useContext(authContext);

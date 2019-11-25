@@ -26,24 +26,24 @@ const initialState: IState = { toDoList: [] };
 const reducer: React.Reducer<IState, IAction> = (state, action) => {
     switch (action.type) {
         case ActionType.add:
-        return {
-        toDoList: [...state.toDoList, action.payload]
-        };
+            return {
+                toDoList: [...state.toDoList, action.payload]
+            };
         case ActionType.updateStatus:
-        return {
-            toDoList: state.toDoList.map(toDo => {
-                if (toDo.id === action.payload.id) {
-                    return { ...toDo, complete: !toDo.complete };
-                }
-                return toDo;
-            })
-        };
+            return {
+                toDoList: state.toDoList.map(toDo => {
+                    if (toDo.id === action.payload.id) {
+                        return { ...toDo, complete: !toDo.complete };
+                    }
+                    return toDo;
+                })
+            };
         case ActionType.delete:
-        return {
-            toDoList: state.toDoList.filter(toDo => toDo.id !== action.payload.id)
-        };
+            return {
+                toDoList: state.toDoList.filter(toDo => toDo.id !== action.payload.id)
+            };
         default:
-        throw new Error();
+            throw new Error();
     }
 };
 
@@ -61,7 +61,7 @@ const ToDoProvider: React.FC<{ children: React.ReactNode }> = ({
     const [toDoList, updateToDoList] = React.useReducer(reducer, initialState);
     return (
         <Provider value={{ state: toDoList, updateToDoList }}>
-        {children}
+            {children}
         </Provider>
     );
 };
