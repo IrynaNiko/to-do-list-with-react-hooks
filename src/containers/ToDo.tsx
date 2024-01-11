@@ -3,8 +3,8 @@ import * as React from "react";
 import { Header } from "../components/Styles";
 /** Components */
 import AddToDo from "./AddToDo";
-import RandomJoke from "../containers/RandomJoke";
-import ToDoList from "../containers/ToDoList";
+import RandomJoke from "./RandomJoke";
+import ToDoList from "./ToDoList";
 /** Presentation/UI */
 import { ToDoContainer } from "../components/Styles";
 
