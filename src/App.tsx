@@ -8,6 +8,8 @@ import ToDoContextProvider from "./contexts/ToDoContext";
 import * as Sentry from "@sentry/react";
 
 Sentry.init({
+  environment: "production",
+  release: process.env.npm_package_version,
   dsn: "https://8cb1aa872bc15da19dad46584064911b@o4506554459750400.ingest.sentry.io/4506554463289344",
   integrations: [
     new Sentry.BrowserTracing({
